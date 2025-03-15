@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .atm-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .screen {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            min-height: 100px; /* Ensure screen has some height */
+            overflow: auto; /* Add scroll if content overflows */
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #balance {
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="atm-container">
+    <div class="screen" id="screen">
+        <p id="message">Welcome to the ATM!</p>
+        <p id="balance">Balance: $1000</p> </div>
+    <div class="buttons">
+        <button onclick="deposit()">Deposit</button>
+        <button onclick="withdraw()">Withdraw</button>
+        <button onclick="checkBalance()">Check Balance</button>
+        <button onclick="other()">Other</button>
+        <button onclick="cancel()">Cancel</button>
+        <button></button> </div>
+</div>
+
+<script>
+    let balance = 1000;
+    const screen = document.getElementById('screen');
+    const message = document.getElementById('message');
+    const balanceDisplay = document.getElementById('balance');
+
+    function updateScreen() {
+        balanceDisplay.textContent = `Balance: $${balance}`;
+    }
+
+    function displayMessage(msg, isError = false) {
+        message.textContent = msg;
+        if (isError) {
+            message.classList.add('error');
+        } else {
+            message.classList.remove('error');
+        }
+    }
+
+    function deposit() {
+        const amount = parseFloat(prompt("Enter deposit amount:", "0"));
+        if (isNaN(amount) || amount <= 0) {
+            displayMessage("Invalid deposit amount.", true);
+            return;
+        }
+        balance += amount;
+        updateScreen();
+        displayMessage(`Successfully deposited $${amount}.`);
+    }
+
+    function withdraw() {
+        const amount = parseFloat(prompt("Enter withdrawal amount:", "0"));
+        if (isNaN(amount) || amount <= 0) {
+            displayMessage("Invalid withdrawal amount.", true);
+            return;
+        }
+        if (amount > balance) {
+            displayMessage("Insufficient funds.", true);
+            return;
+        }
+        balance -= amount;
+        updateScreen();
+        displayMessage(`Successfully withdrew $${amount}.`);
+    }
+
+    function checkBalance() {
+        displayMessage(`Your current balance is $${balance}.`);
+    }
+
+    function other() {
+      displayMessage("Other services are not yet implemented.");
+    }
+
+    function cancel() {
+      displayMessage("Transaction cancelled.");
+    }
+
+    updateScreen(); // Initialize balance display
+</script>
+
+</body>
+</html>

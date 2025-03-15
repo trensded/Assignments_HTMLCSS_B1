@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80 text-center">
+        <h1 class="text-2xl font-bold mb-4">ENTER YOUR PIN NUMBER</h1>
+        
+        <input type="password" id="pin" class="border p-2 w-full text-center rounded-md" placeholder="Enter 4-digit PIN" maxlength="4">
+        
+        <div class="mt-4">
+            <button onclick="validatePin()" class="bg-blue-500 text-white py-2 px-4 rounded-md w-full animate-pulse">ENTER</button>
+        </div>
+        
+        <p id="message" class="mt-4 font-medium text-red-600"></p>
+    </div>
+
+    <script>
+        function validatePin() 
+        {
+            const pin=1234;//assign a value as a pin number
+            const enteredPin = document.getElementById("pin").value;
+            
+            if (pin==enteredPin) 
+            { // Checks if the PIN is correct
+                window.location.href = "index.html"; 
+            } 
+            else 
+            {
+                document.getElementById("message").innerText = "Please enter a valid 4-digit PIN.";
+            }
+        }
+    </script>
+</body>
+</html>

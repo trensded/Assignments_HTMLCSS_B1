@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>ATM Simulation</title>
+</head>
+<body>
+    <div class="atm-container">
+        <!-- Password Setup Screen -->
+        <div id="setupScreen" class="screen">
+            <h2>Create Password</h2>
+            <input type="password" id="newPassword" placeholder="Enter new password">
+            <input type="password" id="confirmPassword" placeholder="Confirm password">
+            <div class="error" id="setupError"></div>
+            <button onclick="setupPassword()">Set Password</button>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen hidden">
+            <h2>Enter Password</h2>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <div class="error" id="passwordError"></div>
+            <div class="keypad">
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="clearInput()">C</button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="login()">Enter</button>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="mainMenu" class="screen hidden">
+            <h2>Select Option</h2>
+            <button onclick="showScreen('balanceScreen')">Check Balance</button>
+            <button onclick="showScreen('withdrawScreen')">Withdraw</button>
+            <button onclick="showScreen('depositScreen')">Deposit</button>
+            <button onclick="logout()">Exit</button>
+        </div>
+
+        <!-- Balance Screen -->
+        <div id="balanceScreen" class="screen hidden">
+            <h2>Your Balance</h2>
+            <p id="balanceAmount">LKR 1000.00</p>
+            <button onclick="showScreen('mainMenu')">Back</button>
+        </div>
+
+        <!-- Withdraw Screen -->
+        <div id="withdrawScreen" class="screen hidden">
+            <h2>Withdraw Amount</h2>
+            <input type="number" id="withdrawAmount" placeholder="Enter amount">
+            <div class="error" id="withdrawError"></div>
+            <div class="success" id="withdrawSuccess"></div>
+            <button onclick="processWithdraw()">Confirm</button>
+            <button onclick="showScreen('mainMenu')">Cancel</button>
+        </div>
+
+        <!-- Deposit Screen -->
+        <div id="depositScreen" class="screen hidden">
+            <h2>Deposit Amount</h2>
+            <input type="number" id="depositAmount" placeholder="Enter amount">
+            <div class="error" id="depositError"></div>
+            <div class="success" id="depositSuccess"></div>
+            <button onclick="processDeposit()">Confirm</button>
+            <button onclick="showScreen('mainMenu')">Cancel</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h2>ATM Machine</h2>
+        
+        <!-- Login Screen -->
+        <div id="login-screen">
+            <p>Enter PIN:</p>
+            <input type="password" id="pin-input" maxlength="4">
+            <button onclick="login()">Enter</button>
+            <p id="login-error"></p>
+        </div>
+
+        <!-- ATM Menu -->
+        <div id="atm-menu" style="display: none;">
+            <p>Welcome! Choose an option:</p>
+            <button onclick="checkBalance()">Check Balance</button>
+            <button onclick="showWithdraw()">Withdraw</button>
+            <button onclick="showDeposit()">Deposit</button>
+            <button onclick="logout()">Exit</button>
+            <p id="balance-display"></p>
+        </div>
+
+        <!-- Withdraw Screen -->
+        <div id="withdraw-screen" style="display: none;">
+            <p>Enter withdrawal amount:</p>
+            <input type="number" id="withdraw-amount">
+            <button onclick="withdraw()">Withdraw</button>
+            <button onclick="goBack()">Back</button>
+            <p id="withdraw-message"></p>
+        </div>
+
+        <!-- Deposit Screen -->
+        <div id="deposit-screen" style="display: none;">
+            <p>Enter deposit amount:</p>
+            <input type="number" id="deposit-amount">
+            <button onclick="deposit()">Deposit</button>
+            <button onclick="goBack()">Back</button>
+            <p id="deposit-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

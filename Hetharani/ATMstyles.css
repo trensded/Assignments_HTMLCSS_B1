@@ -1,0 +1,32 @@
+/* style.css */
+.atm-container {
+    width: 300px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.screen {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: 100px; /* Ensure enough space for messages */
+}
+
+.keypad {
+    margin-top: 10px;
+}
+
+.keypad table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.keypad button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}

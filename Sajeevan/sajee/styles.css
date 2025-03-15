@@ -1,0 +1,66 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('ab.webp') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.atm-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 320px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 12px;
+    width: 220px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+button img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#pin-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.atm-logo {
+    width: 120px; 
+    height: auto; 
+    display: block;
+    margin: 0 auto 20px; 
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); 
+}

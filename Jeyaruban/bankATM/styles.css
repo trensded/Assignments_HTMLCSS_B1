@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.atm-container {
+    background-color: #e6f7ff;
+    border: 2px solid #0073e6;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #0073e6;
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+input[type="password"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #0073e6;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+

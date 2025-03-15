@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RON BANK ATM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h1><i>RON ATM </i></h1>
+        <div class="balance-info">
+            <p>Balance: $<span id="balance">1000</span></p>
+        </div>
+        
+        <div class="transactions">
+            <button id="checkBalanceBtn">Check Balance</button>
+            <button id="depositBtn">Deposit</button>
+            <button id="withdrawBtn">Withdraw</button>
+        </div>
+        
+        <div id="depositForm" class="transaction-form">
+            <label for="depositAmount">Deposit Amount:</label>
+            <input type="number" id="depositAmount" placeholder="Enter deposit amount">
+            <button id="confirmDeposit">Confirm Deposit</button>
+        </div>
+
+        <div id="withdrawForm" class="transaction-form">
+            <label for="withdrawAmount">Withdraw Amount:</label>
+            <input type="number" id="withdrawAmount" placeholder="Enter withdrawal amount">
+            <button id="confirmWithdraw">Confirm Withdraw</button>
+        </div>
+
+        <div id="transactionHistory" class="history">
+            <h2>Transaction History</h2>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
