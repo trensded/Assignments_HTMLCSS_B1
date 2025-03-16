@@ -1,108 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Self</title>
-    <style>
-        h1{
-            color:blue;
-            font-size: 36px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        }
-        p{
-            color:brown;
-            font-weight: inherit;
-        }
-        h2{
-            margin-top: 30px;
-            color: darkviolet;
-            margin-bottom: 15px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM Machine</title>
+    <link rel="stylesheet" href="ATMstyles.css" />
+  </head>
+  <body>
+    <div class="atm-container">
+      <h1>ATM Machine</h1>
+      <div class="screen">
+        <div id="display">Welcome! Please insert your card.</div>
+        <div id="input-area" style="display: none">
+          <input type="password" id="pin" placeholder="Enter PIN" />
+          <p>Use pin - 1234</p>
+          <button onclick="verifyPIN()">Verify</button>
+        </div>
+        <div id="menu" style="display: none">
+          <button onclick="checkBalance()">Check Balance</button>
+          <button onclick="withdraw()">Withdraw</button>
+          <button onclick="deposit()">Deposit</button>
+          <button onclick="logout()">Logout</button>
+        </div>
+        <div id="balance-display" style="display: none">
+          Balance: $<span id="balance">0</span>
+        </div>
+        <div id="withdraw-form" style="display: none">
+          <input
+            type="number"
+            id="withdraw-amount"
+            placeholder="Enter amount"
+          />
+          <button onclick="processWithdraw()">Withdraw</button>
+        </div>
+        <div id="deposit-form" style="display: none">
+          <input type="number" id="deposit-amount" placeholder="Enter amount" />
+          <button onclick="processDeposit()">Deposit</button>
+        </div>
 
-        }
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            line-height: 2.5;
-            padding: 15px;
-            background-image: url("rainbow.avif");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        </style>
-        <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1><center><u>Hetharani Jeyakumaran.</u></center></h1>
-    <img src="tharani.jpg">
-    <section>
-        
-   
-    <!-- my birth of date:25.11.2002 -->
-    <p><i><b>Hello,I am a Student.I'm currently based in Jaffna.<br>I like to spend most of my time with my family because <br>I enjoy the company of them, and I also learn ethics and social values.</b></i></p>
-        <hr width="100%" size="6"/>
-        <h2>Personal Information</h2>
-    <ul>
-        <li>Age:22 years old</li>
-        <li>Address No:1010/41,K.K.S Road,Jaffna.Sri Lanka.</li>
-        <li>Email Address:<a href="hetharanijeyakumar@gmail.com">hetharanijeyakumar@gmail.com</a></li>
-        <li>Phone number:<a href="076 380 9793">076 380 9793</a></li>
-    </ul>
-    </section>
-    
-
-        <h2>Education</h2>
-        <ul>
-        <li>Advanced Level completed.</li></ul> 
-        <table border="1">
-            <tr>
-                <th>Subject</th>
-                <th>Grade</th>
-            </tr>
-            <tr>
-                <td>Bio System Technology</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>Science for Technology</td>
-                <td>C</td>
-            </tr>
-            <tr>
-                <td>Information and Communcation Technology</td>
-                <td>B</td>
-            </tr>
-
+        <div id="message" style="display: none; color: red"></div>
+      </div>
+      <div class="keypad">
+        <table>
+          <tr>
+            <td><button onclick="appendNumber('1')">1</button></td>
+            <td><button onclick="appendNumber('2')">2</button></td>
+            <td><button onclick="appendNumber('3')">3</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="appendNumber('4')">4</button></td>
+            <td><button onclick="appendNumber('5')">5</button></td>
+            <td><button onclick="appendNumber('6')">6</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="appendNumber('7')">7</button></td>
+            <td><button onclick="appendNumber('8')">8</button></td>
+            <td><button onclick="appendNumber('9')">9</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="clearInput()">C</button></td>
+            <td><button onclick="appendNumber('0')">0</button></td>
+            <td><button onclick="backspace()">←</button></td>
+          </tr>
         </table>
-        <ul><li>Web Desining course completed.</li> 
-        <li> Studied at ATI-Jaffna.</li>
-    </ul>
-    
-    <h2>Skills</h2>
-    <ol>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-    </ol>
-    <h2>My Interests</h2>
-    <dl>
-        <dt>Music</dt>
-    <dd>I enjoy listening to various genres of music<br>from classical to rock.</dd>
-    </dl>
-    <dl>
-        <dt>Badminton</dt>
-        <dd>I play regularly and enjoy the fast-paced nature of the game.</dd>
-    </dl>
-    <h2>My Hobbies.</h2>
-    <ul type="circle">
-        <li>Photography.</li>
-        <li>Gardening.</li>
-        <li>Reading story books.</li>
-        <li>Collecting stamps.</li>
-        <li>Playing social games.</li>
-    </ul>
-    <h2>I Like Emoji</h2>
-    <p>&#128512,&#128516,&#128517</p>
-</body>
+      </div>
+    </div>
+    <script src="ATMscript.js"></script>
+  </body>
 </html>

@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ATM Simulator</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <header>
-        <h1>Welcome to the Digital ATM</h1>
+      <h1>Welcome to the Digital ATM</h1>
     </header>
     <main>
-        <div class="atm-container">
-            <h2>Secure & Fast Banking</h2>
-            <p id="message">Enter your 4-digit PIN</p>
-            <input type="password" id="pin-input" maxlength="4">
-            <button onclick="validatePIN()">Enter</button>
-            <div id="options" class="hidden">
-                <h3>Choose Your Transaction</h3>
-                <button onclick="checkBalance()">Check Balance</button>
-                <button onclick="depositMoney()">Deposit</button>
-                <button onclick="withdrawMoney()">Withdraw</button>
-            </div>
-            <p id="balance" class="hidden">Balance: $<span id="balance-amount">1000</span></p>
+      <div class="atm-container">
+        <h2>Secure & Fast Banking</h2>
+        <p id="message">Enter your 4-digit PIN</p>
+        <p>Use pin - 1234</p>
+        <input type="password" id="pin-input" maxlength="4" />
+        <button onclick="validatePIN()">Enter</button>
+        <div id="options" class="hidden">
+          <h3>Choose Your Transaction</h3>
+          <button onclick="checkBalance()">Check Balance</button>
+          <button onclick="depositMoney()">Deposit</button>
+          <button onclick="withdrawMoney()">Withdraw</button>
         </div>
+        <p id="balance" class="hidden">
+          Balance: $<span id="balance-amount">1000</span>
+        </p>
+      </div>
     </main>
     <footer>
-        <p>&copy; 2025 Digital ATM - Secure Transactions Anytime</p>
+      <p>&copy; 2025 Digital ATM - Secure Transactions Anytime</p>
     </footer>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
